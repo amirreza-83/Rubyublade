@@ -1,0 +1,217 @@
+/* استایل کلی */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.background {
+    background: url('imgs/back.gif') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    color: #7dfbff;
+}
+
+/* هدر */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+header h1 {
+    font-size: 1.5rem;
+    color: #ff2f00;
+}
+
+/* منو دسکتاپ */
+.nav-desktop a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+.nav-desktop a:hover {
+    color: #ff00ff;
+}
+
+/* منوی موبایل */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+}
+.nav-mobile a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.nav-mobile a:hover {
+    color: #ff00ff;
+}
+
+/* بخش معرفی */
+.hero {
+    text-shadow: #1a1a1a 1px 3px;
+    margin-top: 100px;
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+.hero h2 {
+    font-size: 2.5rem;
+    color: #00ffcc;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+.hero button {
+    background: #00ffcc;
+    color: #0f0f0f;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.hero button:hover {
+    background: #ff00ff;
+}
+
+/* بخش درباره ما */
+.about {
+    background: #1a1a1a;
+    padding: 50px 20px;
+    text-align: center;
+}
+.about h2 {
+    font-size: 2rem;
+    color: #00ffcc;
+}
+.about p {
+    line-height: 5;
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+/* بخش بازی‌ها */
+.games {
+    padding: 50px 20px;
+    background: url('imgs/back1.gif') no-repeat center center/cover;
+    text-align: center;
+}
+.games h2 {
+    font-size: 2rem;
+    color: #00ffcc;
+    margin-bottom: 30px;
+}
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.game-card {
+    background: #1a1a1a;
+    border: 2px solid #00ffcc;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.game-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffcc;
+}
+.game-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+.game-card h3 {
+    margin: 15px 0 10px;
+    color: #ffffff;
+}
+.game-card p {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+/* پاورقی */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    color: #cccccc;
+    border-top: 2px solid #00ffcc;
+}
+a {
+    text-decoration: none; /* حذف خط زیر لینک */
+    color: inherit; /* استفاده از رنگ پیش‌فرض برای لینک */
+    transition: none; /* حذف افکت تغییر رنگ یا هر تغییر دیگری */
+}
+
+/* در حالت hover */
+a:hover {
+    text-decoration: none; /* حفظ عدم وجود خط زیر لینک در حالت hover */
+    color: inherit; /* رنگ تغییر نمی‌کند */
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 768px) {
+    .nav-desktop {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-mobile.open {
+        display: flex;
+    }
+}

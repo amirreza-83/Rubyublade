@@ -1,0 +1,281 @@
+* {
+    box-sizing: border-box; /* استفاده از box-sizing برای همه عناصر */
+    margin: 0;
+    padding: 0;
+}
+
+/* تنظیمات پایه */
+body {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(18, 18, 18);
+    color: #161616;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* استایل برای هر پست */
+.post {
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: flex-start; /* هم‌راستایی عمودی از بالا */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* اجازه می‌دهد که محتوا در موبایل به خط بعدی برود */
+}
+
+/* تصویر پست */
+.post img {
+    max-width: 200px; /* اندازه تصویر به دلخواه */
+    margin-right: 20px; /* فاصله از متن */
+    border-radius: 10px;
+    flex-shrink: 0; /* از کوچک شدن تصویر جلوگیری می‌کند */
+}
+
+/* تایتل و توضیحات پست */
+.post-text {
+    flex-grow: 1; /* متن در فضای باقی‌مانده رشد می‌کند */
+}
+
+.post h2 {
+    padding: 20px;
+    font-size: 1.8rem;
+
+}
+
+.post p {
+    padding: 20px;
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0; /* حذف فاصله بالا و پایین */
+}
+
+/* لینک دانلود */
+.post a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00ff99;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.post a:hover {
+    background-color: #00cc7a;
+}
+
+/* استایل ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .post {
+        flex-direction: column; /* برای موبایل پست‌ها به صورت عمودی نمایش داده می‌شوند */
+        align-items: center; /* تصویر و متن به صورت مرکزی نمایش داده می‌شوند */
+    }
+
+    .post img {
+        margin-bottom: 20px; /* فاصله تصویر از متن */
+        max-width: 100%; /* تصویر به عرض 100% صفحه می‌آید */
+    }
+
+    .post-text {
+        width: 100%; /* عرض متن به 100% تغییر می‌کند */
+        text-align: center; /* متن‌ها در موبایل به صورت مرکزی قرار می‌گیرند */
+    }
+
+    .post h2 {
+        font-size: 1.5rem; /* اندازه فونت عنوان در موبایل کاهش می‌یابد */
+    }
+
+    .post p {
+        font-size: 1rem; /* اندازه فونت توضیحات در موبایل کاهش می‌یابد */
+    }
+}
+
+/* هدر صفحه */
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .post h2 {
+        font-size: 1rem;
+    }
+
+    .post p {
+        font-size: 0.8rem;
+    }
+}
+/* استایل صفحه‌بندی */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #00ff99;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: 1px solid #00ff99;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.pagination a:hover {
+    background-color: #00ff99;
+    color: #000;
+}
+
+.pagination .current-page {
+    color: #ff4dff;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.background {
+    background: url('imgs/back.gif') no-repeat center center/cover;
+    height: 50vh;
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* هدر */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+header h1 {
+    font-size: 1.5rem;
+    color: #ff2f00;
+}
+.hero {
+    font-size: 70px;
+}
+
+/* منو دسکتاپ */
+.nav-desktop a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+.nav-desktop a:hover {
+    color: #ff00ff;
+}
+
+/* منوی موبایل */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+}
+.nav-mobile a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.nav-mobile a:hover {
+    color: #ff00ff;
+}
+/* پاورقی */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    color: #cccccc;
+    border-top: 2px solid #00ffcc;
+}
+a {
+    text-decoration: none; /* حذف خط زیر لینک */
+    color: inherit; /* استفاده از رنگ پیش‌فرض برای لینک */
+    transition: none; /* حذف افکت تغییر رنگ یا هر تغییر دیگری */
+}
+
+/* در حالت hover */
+a:hover {
+    text-decoration: none; /* حفظ عدم وجود خط زیر لینک در حالت hover */
+    color: inherit; /* رنگ تغییر نمی‌کند */
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 768px) {
+    .nav-desktop {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-mobile.open {
+        display: flex;
+    }
+}
